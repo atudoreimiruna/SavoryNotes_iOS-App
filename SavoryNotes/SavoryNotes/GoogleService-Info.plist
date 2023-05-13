@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>DATABASE_URL</key>
+	<string>https://savorynotes-default-rtdb.europe-west1.firebasedatabase.app/</string>
 	<key>CLIENT_ID</key>
 	<string>546296467945-cr5tenr74qj6th3h4ll4glpolme7m1da.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
@@ -13,21 +15,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.unibuc.SavoryNotes</string>
+	<string>com.unibuc.project2023</string>
 	<key>PROJECT_ID</key>
 	<string>savorynotes</string>
 	<key>STORAGE_BUCKET</key>
 	<string>savorynotes.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:546296467945:ios:633a6a2b345c2aa1d7bb78</string>
 </dict>

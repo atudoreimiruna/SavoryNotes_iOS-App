@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F112C7C2A0FDCCA005C125E /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F112C7B2A0FDCCA005C125E /* PostService.swift */; };
 		3F41B4E62A0F996900346F5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B4E52A0F996900346F5F /* AppDelegate.swift */; };
 		3F41B4E82A0F996900346F5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B4E72A0F996900346F5F /* SceneDelegate.swift */; };
 		3F41B4EA2A0F996900346F5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B4E92A0F996900346F5F /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F112C7B2A0FDCCA005C125E /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		3F41B4E22A0F996900346F5F /* SavoryNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SavoryNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F41B4E52A0F996900346F5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F41B4E72A0F996900346F5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F112C7A2A0FDCB2005C125E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3F112C7B2A0FDCCA005C125E /* PostService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		3F41B4D92A0F996800346F5F = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		3F41B4E42A0F996900346F5F /* SavoryNotes */ = {
 			isa = PBXGroup;
 			children = (
+				3F112C7A2A0FDCB2005C125E /* API */,
 				3F41B50C2A0FC84200346F5F /* Utilities */,
 				3F41B4E52A0F996900346F5F /* AppDelegate.swift */,
 				3F41B4E72A0F996900346F5F /* SceneDelegate.swift */,
@@ -216,6 +227,7 @@
 				3F41B4EA2A0F996900346F5F /* ViewController.swift in Sources */,
 				3F41B50E2A0FC87500346F5F /* Extensions.swift in Sources */,
 				3F41B5082A0FC48600346F5F /* RecipeCell.swift in Sources */,
+				3F112C7C2A0FDCCA005C125E /* PostService.swift in Sources */,
 				3F41B4E62A0F996900346F5F /* AppDelegate.swift in Sources */,
 				3F41B5102A0FD02D00346F5F /* CreateRecipeController.swift in Sources */,
 				3F41B5032A0FBC0E00346F5F /* TableTableViewController.swift in Sources */,

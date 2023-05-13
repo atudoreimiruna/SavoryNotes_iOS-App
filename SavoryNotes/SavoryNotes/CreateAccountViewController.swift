@@ -14,7 +14,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        passwordTextField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
     

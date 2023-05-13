@@ -9,12 +9,21 @@ import UIKit
 
 class TableTableViewController: UITableViewController {
 
+    let myCustomPink = UIColor(red: 255/255, green: 128/255, blue: 192/255, alpha: 1.0)
+
+    var recipeItems = [RecipeItem]() {
+        didSet {
+            print("recipe items was set")
+            tableView.reloadData()
+        }
+    }
+    
     let reuseIdentifier = "RecipeCell"
     
     lazy var createNewButton: UIButton = {
         let button = UIButton()
-        button.tintColor = .red
-        button.backgroundColor = .green
+        button.tintColor = .black
+        button.backgroundColor = myCustomPink
         button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
         button.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
         
@@ -27,6 +36,12 @@ class TableTableViewController: UITableViewController {
         super.viewDidLoad()
         
         configureTableView()
+        
+        PostService.shared.fetchAllItems { (allItems) in
+            self.recipeItems = allItems
+        }
+        
+        navigationItem.title = "Savory Notes"
     }
     
     @objc func createNewRecipe() {
@@ -40,7 +55,7 @@ class TableTableViewController: UITableViewController {
         
         tableView.register(RecipeCell.self,  forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 100
-        tableView.separatorColor = .systemRed
+        tableView.separatorColor = .red
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
         tableView.tableFooterView = UIView()
@@ -57,11 +72,13 @@ class TableTableViewController: UITableViewController {
 extension TableTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return recipeItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? RecipeCell else { return UITableViewCell() }
+        
+        cell.recipeItem = recipeItems[indexPath.row]
         
         return cell
     }
