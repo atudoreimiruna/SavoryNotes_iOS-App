@@ -9,8 +9,11 @@ import UIKit
 
 class TableTableViewController: UITableViewController {
 
-    let myCustomPink = UIColor(red: 255/255, green: 128/255, blue: 192/255, alpha: 1.0)
-
+    let prettyPlease = UIColor(red: 255/255, green: 204/255, blue: 204/255, alpha: 1.0)
+    let youngSalmon = UIColor(red: 255/255, green: 184/255, blue: 184/255, alpha: 1.0)
+    let electricBlue = UIColor(red: 126/255, green: 255/255, blue: 245/255, alpha: 1.0)
+    let hammamBlue = UIColor(red: 103/255, green: 230/255, blue: 220/255, alpha: 1.0)
+    
     var recipeItems = [RecipeItem]() {
         didSet {
             print("recipe items was set")
@@ -23,7 +26,7 @@ class TableTableViewController: UITableViewController {
     lazy var createNewButton: UIButton = {
         let button = UIButton()
         button.tintColor = .black
-        button.backgroundColor = myCustomPink
+        button.backgroundColor = hammamBlue
         button.setImage(UIImage(systemName: "plus.circle"), for: .normal)
         button.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
         
@@ -51,7 +54,7 @@ class TableTableViewController: UITableViewController {
 
     // MARK - Helper function
     func configureTableView() {
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = prettyPlease    
         
         tableView.register(RecipeCell.self,  forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 100
