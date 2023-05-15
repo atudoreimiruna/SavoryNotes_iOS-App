@@ -13,15 +13,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SavoryNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFJ-Ps-5D2">
                                 <rect key="frame" x="171" y="335" width="66" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.78468276520000002" green="0.470529219" blue="0.73645026160000004" alpha="0.72940811260000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Login"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Login">
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="j4N-g7-GkE" kind="show" id="S9h-on-IRh"/>
                                 </connections>
@@ -29,9 +32,12 @@
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw8-ay-k1L">
                                 <rect key="frame" x="122" y="440" width="165" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.78468276520000002" green="0.470529219" blue="0.73645026160000004" alpha="0.72940811260000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Create an Account"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Create an Account">
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="95x-fl-5hS" kind="show" id="uhc-Hh-9r4"/>
                                 </connections>
@@ -51,15 +57,18 @@
             <objects>
                 <viewController id="j4N-g7-GkE" customClass="LoginViewController" customModule="SavoryNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HI3-gc-jEC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35e-LR-S9V">
                                 <rect key="frame" x="163" y="525" width="66" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.78468276520000002" green="0.470529219" blue="0.73645026160000004" alpha="0.72940811260000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Login"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Login">
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="loginClicked:" destination="j4N-g7-GkE" eventType="touchUpInside" id="xme-Bl-BcR"/>
                                 </connections>
@@ -76,6 +85,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-a1-EJR">
+                                <rect key="frame" x="304" y="393" width="31" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title=""/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nG6-69-lCL"/>
                         <color key="backgroundColor" red="0.99215692281723022" green="0.98431378602981567" blue="0.97647064924240112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,12 +99,13 @@
                     <connections>
                         <outlet property="emailTextField" destination="VOS-GS-Ybv" id="4ol-2h-5rB"/>
                         <outlet property="passwordTextField" destination="SA3-v0-sly" id="BGv-xN-N0c"/>
+                        <outlet property="showPasswordButton" destination="dOk-a1-EJR" id="7CI-mS-PFD"/>
                         <segue destination="wQF-Wj-lgT" kind="show" identifier="goToNext" id="i8d-Qu-eOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1M-zn-Urn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="-11"/>
+            <point key="canvasLocation" x="1922.9007633587785" y="-11.267605633802818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BlS-4i-9Ie">
@@ -120,15 +136,18 @@
             <objects>
                 <viewController id="95x-fl-5hS" customClass="CreateAccountViewController" customModule="SavoryNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HIg-PY-aYp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-nN-zwb">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-nN-zwb">
                                 <rect key="frame" x="153" y="439" width="87" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.78468276520000002" green="0.470529219" blue="0.73645026160000004" alpha="0.72940811260000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Register"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Register">
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="signupClicked:" destination="95x-fl-5hS" eventType="touchUpInside" id="j8v-Lo-CxU"/>
                                 </connections>
@@ -147,14 +166,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAz-ab-XNw">
+                                <rect key="frame" x="300" y="318" width="31" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title=""/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ID6-Nh-nuJ"/>
-                        <color key="backgroundColor" red="0.98431378602981567" green="0.96862751245498657" blue="0.95294123888015747" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="wnO-Cr-pRb"/>
                     <connections>
                         <outlet property="emailTextField" destination="1Hd-d9-Kds" id="itJ-pY-fy5"/>
                         <outlet property="passwordTextField" destination="O5X-RS-yeN" id="a3n-KX-1CY"/>
+                        <outlet property="showPasswordButton" destination="NAz-ab-XNw" id="D9h-ur-Dfp"/>
                         <segue destination="wQF-Wj-lgT" kind="show" identifier="goToNext" id="iEq-q6-XpM"/>
                     </connections>
                 </viewController>
@@ -167,29 +193,30 @@
             <objects>
                 <viewController id="wQF-Wj-lgT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XgR-Be-wb6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQI-jm-7TV">
-                                <rect key="frame" x="126" y="360" width="142" height="35"/>
+                                <rect key="frame" x="125" y="358" width="142" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="View all recipes"/>
                                 <connections>
+                                    <action selector="viewAllRecipeButton:" destination="1We-Bp-Tnv" eventType="touchUpInside" id="YFG-rh-v2j"/>
                                     <segue destination="vMi-hD-ZAa" kind="show" id="5YG-3y-Een"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSq-wP-Nzs">
-                                <rect key="frame" x="124" y="409" width="142" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add new recipe"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-Ox-5Jf">
-                                <rect key="frame" x="157" y="754" width="78" height="35"/>
+                                <rect key="frame" x="157" y="662" width="78" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="1We-Bp-Tnv" eventType="touchUpInside" id="QSH-CL-VGa"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0UW-zs-O4c"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cpd-4w-4vq"/>
@@ -198,6 +225,7 @@
                     <navigationItem key="navigationItem" id="Vq8-HY-nun"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOY-mh-Zry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1We-Bp-Tnv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2702" y="475"/>
         </scene>
@@ -206,17 +234,20 @@
             <objects>
                 <tableViewController id="vMi-hD-ZAa" customClass="TableTableViewController" customModule="SavoryNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="USM-Ir-rvr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="Ic7-mD-XDv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecipeCell" id="Ic7-mD-XDv">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ic7-mD-XDv" id="32T-HG-Vgc">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6uk-Bt-FXv" kind="push" id="aaB-S0-qhj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -230,9 +261,26 @@
             </objects>
             <point key="canvasLocation" x="3585" y="475"/>
         </scene>
+        <!--Recipe Detail View Controller-->
+        <scene sceneID="0rD-lF-OCC">
+            <objects>
+                <viewController id="6uk-Bt-FXv" customClass="RecipeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hvh-eY-ih6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0ot-f6-4dh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="It8-vz-vgD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gf-f6-2pr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4552" y="475"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="i8d-Qu-eOb"/>
+        <segue reference="0UW-zs-O4c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

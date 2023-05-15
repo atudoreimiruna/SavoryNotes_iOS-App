@@ -14,6 +14,7 @@ class RecipeCell: UITableViewCell {
         didSet {
             titleLabel.text = recipeItem?.title
             typeLabel.text = recipeItem?.type
+            timeLabel.text = recipeItem?.time
         }
     }
     private let titleLabel: UILabel = {
@@ -32,7 +33,13 @@ class RecipeCell: UITableViewCell {
         return label
     }()
     
-    
+    private let timeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 18)
+//        label.textColor = .white
+        label.text = "Time: 1h30min"
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,6 +50,9 @@ class RecipeCell: UITableViewCell {
         
         addSubview(typeLabel)
         typeLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        
+        addSubview(timeLabel)
+        timeLabel.anchor(top: typeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
     }
     
     required init?(coder: NSCoder) {

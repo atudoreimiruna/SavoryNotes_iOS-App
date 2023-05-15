@@ -10,11 +10,15 @@ import Firebase
 
 class CreateAccountViewController: UIViewController {
 
+    @IBOutlet weak var showPasswordButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         // Do any additional setup after loading the view.
     }
     
@@ -33,6 +37,15 @@ class CreateAccountViewController: UIViewController {
             }
         }
     }
+    
+    @objc func showPasswordButtonTapped() {
+            passwordTextField.isSecureTextEntry.toggle()
+            if passwordTextField.isSecureTextEntry {
+                showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            } else {
+                showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            }
+        }
     
     /*
     // MARK: - Navigation

@@ -69,6 +69,14 @@ class TableTableViewController: UITableViewController {
         createNewButton.layer.cornerRadius = 56 / 2
         createNewButton.alpha = 1
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipeDetail",
+           let indexPath = tableView.indexPathForSelectedRow,
+           let recipeDetailVC = segue.destination as? RecipeDetailViewController {
+            recipeDetailVC.recipeItem = recipeItems[indexPath.row]
+        }
+    }
 }
 
 

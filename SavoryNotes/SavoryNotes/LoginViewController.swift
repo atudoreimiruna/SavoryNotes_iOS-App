@@ -12,14 +12,16 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var showPasswordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func loginClicked(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -35,7 +37,18 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "goToNext", sender: self)
             }
         }
+        
     }
+    
+    @objc func showPasswordButtonTapped() {
+            passwordTextField.isSecureTextEntry.toggle()
+            if passwordTextField.isSecureTextEntry {
+                showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            } else {
+                showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            }
+        }
+    
     /*
     // MARK: - Navigation
 

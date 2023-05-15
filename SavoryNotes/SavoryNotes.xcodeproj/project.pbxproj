@@ -23,6 +23,7 @@
 		3F41B5082A0FC48600346F5F /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B5072A0FC48600346F5F /* RecipeCell.swift */; };
 		3F41B50E2A0FC87500346F5F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B50D2A0FC87500346F5F /* Extensions.swift */; };
 		3F41B5102A0FD02D00346F5F /* CreateRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F41B50F2A0FD02D00346F5F /* CreateRecipeController.swift */; };
+		3FF3FE032A1290A500D2D650 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3FE022A1290A500D2D650 /* RecipeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3F41B5072A0FC48600346F5F /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		3F41B50D2A0FC87500346F5F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3F41B50F2A0FD02D00346F5F /* CreateRecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeController.swift; sourceTree = "<group>"; };
+		3FF3FE022A1290A500D2D650 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				3F41B5022A0FBC0D00346F5F /* TableTableViewController.swift */,
 				3F41B50F2A0FD02D00346F5F /* CreateRecipeController.swift */,
+				3FF3FE022A1290A500D2D650 /* RecipeDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3F41B5082A0FC48600346F5F /* RecipeCell.swift in Sources */,
 				3F112C7C2A0FDCCA005C125E /* PostService.swift in Sources */,
 				3F41B4E62A0F996900346F5F /* AppDelegate.swift in Sources */,
+				3FF3FE032A1290A500D2D650 /* RecipeDetailViewController.swift in Sources */,
 				3F41B5102A0FD02D00346F5F /* CreateRecipeController.swift in Sources */,
 				3F41B5032A0FBC0E00346F5F /* TableTableViewController.swift in Sources */,
 				3F41B4E82A0F996900346F5F /* SceneDelegate.swift in Sources */,
