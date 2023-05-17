@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import AVFAudio
 
 
 class CreateRecipeController : UIViewController {
-   
+    
+    private var audioPlayer: AVAudioPlayer?
+    
     let prettyPlease = UIColor(red: 255/255, green: 204/255, blue: 204/255, alpha: 1.0)
     let youngSalmon = UIColor(red: 255/255, green: 184/255, blue: 184/255, alpha: 1.0)
     let electricBlue = UIColor(red: 126/255, green: 255/255, blue: 245/255, alpha: 1.0)
@@ -88,16 +91,36 @@ class CreateRecipeController : UIViewController {
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        
-         configureUI()
+         
+        configureUI()
+        configureAudioPlayer()
     }
     
     @objc func createItemPressed() {
-        guard let recipeText = itemTextField.text else { return }
-        guard let recipeType = typeTextField.text else { return }
-        guard let descriptionType = descriptionTextField.text else { return }
-        guard let ingredientsType = ingTextField.text else { return }
-        guard let timeType = timeTextField.text else { return }
+        guard let recipeText = itemTextField.text, !recipeText.isEmpty else {
+               displayErrorAlert(message: "Title is required")
+               return
+           }
+           
+           guard let recipeType = typeTextField.text, !recipeType.isEmpty else {
+               displayErrorAlert(message: "Category is required")
+               return
+           }
+           
+           guard let descriptionType = descriptionTextField.text, !descriptionType.isEmpty else {
+               displayErrorAlert(message: "Description is required")
+               return
+           }
+           
+           guard let ingredientsType = ingTextField.text, !ingredientsType.isEmpty else {
+               displayErrorAlert(message: "Ingredients is required")
+               return
+           }
+           
+           guard let timeType = timeTextField.text, !timeType.isEmpty else {
+               displayErrorAlert(message: "Preparation time is required")
+               return
+           }
 
         PostService.shared.uploadRecipeItem(text: recipeText, text2: recipeType, text3: descriptionType, text4: ingredientsType, text5: timeType) { (err, ref) in
             self.itemTextField.text = ""
@@ -106,7 +129,41 @@ class CreateRecipeController : UIViewController {
             self.ingTextField.text = ""
             self.timeTextField.text = ""
             
-            self.dismiss(animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Success", message: "Recipe added!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+            self.playSuccessSound()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    private func playSuccessSound() {
+        audioPlayer?.play()
+    }
+    
+    private func displayErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func configureAudioPlayer() {
+        guard let soundURL = Bundle.main.url(forResource: "button-124476", withExtension: "mp3") else {
+            print("Failed to find sound file")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.prepareToPlay()
+        } catch {
+            print("Failed to initialize audio player: \(error.localizedDescription)")
         }
     }
     
@@ -137,17 +194,12 @@ class CreateRecipeController : UIViewController {
         timeTextField.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 480, paddingLeft: 16, paddingRight: 16, height: 40)
         timeTextField.delegate = self
         
-        
         // Button
         view.addSubview(createButton)
         createButton.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 32, paddingBottom: 32, paddingRight: 32, height: 50)
     }
     
 }
-
-
-
-
 
 extension CreateRecipeController: UITextFieldDelegate {
 

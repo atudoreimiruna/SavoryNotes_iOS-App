@@ -28,11 +28,26 @@ class CreateAccountViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password)
         {
-            firebaseResult, error in if let e = error {
-                print("error")
-            }
-            else {
-                // Go to homescreen
+            firebaseResult, error in
+            if let error = error {
+                var errorMessage = "An error occurred."
+                
+                switch error.localizedDescription {
+                    case "The email address is already in use by another account.":
+                        errorMessage = "The email address is already in use by another account. Please try again."
+                    case "The password must be 6 characters long or more.":
+                        errorMessage = "The password must be 6 characters long or more. Please try again."
+                    case "The email address is badly formatted.":
+                        errorMessage = "The email address is badly formatted. Please try again."
+                    default:
+                        errorMessage = "An error occurred. Please try again."
+                    }
+                
+                let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
                 self.performSegue(withIdentifier: "goToNext", sender: self)
             }
         }

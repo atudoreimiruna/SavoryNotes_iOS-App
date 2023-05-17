@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
         showPasswordButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {
@@ -29,11 +28,25 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password)
         {
             firebaseResult, error in
-            if let e = error {
-                print("error")
-            }
-            else {
-                // Go to homescreen
+            if let error = error {
+                var errorMessage = "An error occurred."
+                
+                switch error.localizedDescription {
+                    case "There is no user record corresponding to this identifier. The user may have been deleted.":
+                        errorMessage = "User not found. Please try again."
+                    case "The password is invalid or the user does not have a password.":
+                        errorMessage = "The credentials do not match. Please try again."
+                    case "The email address is badly formatted.":
+                        errorMessage = "The email address is badly formatted. Please try again."
+                    default:
+                        errorMessage = "An error occurred. Please try again."
+                    }
+                
+                let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
                 self.performSegue(withIdentifier: "goToNext", sender: self)
             }
         }

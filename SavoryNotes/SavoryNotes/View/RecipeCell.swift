@@ -5,9 +5,6 @@
 //  Created by Student on 13.05.2023.
 //
 
-self.description = dictionary["description"] as? String ?? ""
-        self.ingredients
-
 import UIKit
 
 class RecipeCell: UITableViewCell {
@@ -15,12 +12,40 @@ class RecipeCell: UITableViewCell {
     var recipeItem: RecipeItem? {
         didSet {
             titleLabel.text = recipeItem?.title
-            typeLabel.text = "Category: " + (recipeItem?.type ?? "")
-            timeLabel.text = "Preparation time: " + (recipeItem?.time ?? "")
-            descriptionLabel.text = "Method of preparation: " (recipeItem?.description ?? "")
-            ingredientsLabel.text = "Ingredients: " (recipeItem?.ingredients ?? "")
+            typeLabel.text = recipeItem?.type ?? ""
+            timeLabel.text =  recipeItem?.time ?? ""
+            descriptionLabel.text =  recipeItem?.description ?? ""
+            ingredientsLabel.text =  recipeItem?.ingredients ?? ""
         }
     }
+    
+    private let spaceCategoryLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.text = "Category: " // Empty initial text
+        return label
+    }()
+    
+    private let spaceTimeLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.text = "Preparation time: " // Empty initial text
+        return label
+    }()
+    
+    private let spaceDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.text = "Method of preparation: "// Empty initial text
+        return label
+    }()
+    
+    private let spaceIngredientsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18)
+        label.text = "Ingredients: " // Empty initial text
+        return label
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -45,14 +70,19 @@ class RecipeCell: UITableViewCell {
 
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
-        label.text = "" // Empty initial text
-        return label
+            label.font = .systemFont(ofSize: 18)
+        label.adjustsFontSizeToFitWidth = true
+        
+            label.numberOfLines = 50 // Display multiple lines
+            label.lineBreakMode = .byWordWrapping // Wrap at word boundaries
+            label.text = "" // Empty initial text
+            return label
     }()
 
     private let ingredientsLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
+        
+        label.font = .systemFont(ofSize: 18)
         label.text = "" // Empty initial text
         return label
     }()
@@ -64,17 +94,29 @@ class RecipeCell: UITableViewCell {
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
         
+        addSubview(spaceCategoryLabel)
+        spaceCategoryLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+
         addSubview(typeLabel)
-        typeLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        typeLabel.anchor(top: spaceCategoryLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        
+        addSubview(spaceTimeLabel)
+        spaceTimeLabel.anchor(top: typeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
         
         addSubview(timeLabel)
-        timeLabel.anchor(top: typeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        timeLabel.anchor(top: spaceTimeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
 
+        addSubview(spaceDescriptionLabel)
+        spaceDescriptionLabel.anchor(top: timeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        
         addSubview(descriptionLabel)
-        descriptionLabel.anchor(top: timeLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        descriptionLabel.anchor(top: spaceDescriptionLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
     
+        addSubview(spaceIngredientsLabel)
+        spaceIngredientsLabel.anchor(top: descriptionLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        
         addSubview(ingredientsLabel)
-        ingredientsLabel.anchor(top: descriptionLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
+        ingredientsLabel.anchor(top: spaceIngredientsLabel.bottomAnchor, left: leftAnchor, paddingTop: 4, paddingLeft: 8)
     }
     
     required init?(coder: NSCoder) {

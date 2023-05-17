@@ -57,7 +57,9 @@ class TableTableViewController: UITableViewController {
         tableView.backgroundColor = prettyPlease    
         
         tableView.register(RecipeCell.self,  forCellReuseIdentifier: reuseIdentifier)
-        tableView.rowHeight = 100
+        tableView.rowHeight = 250
+        // tableView.estimatedRowHeight = 250
+        // tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = .red
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
