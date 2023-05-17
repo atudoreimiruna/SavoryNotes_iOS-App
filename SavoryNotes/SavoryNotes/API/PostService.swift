@@ -11,7 +11,6 @@ import Firebase
 
 // Firebase Realtime Databse
 
-
 struct RecipeItem {
     var title: String
     var type: String
@@ -29,7 +28,6 @@ struct RecipeItem {
         self.time = dictionary["time"] as? String ?? ""
     }
 }
-
 
 struct PostService {
     static let shared = PostService()
@@ -66,6 +64,4 @@ struct PostService {
             DB_REF.child("items").child(id.key!).updateChildValues(value, withCompletionBlock: completion)
         }
     }
-    
-    
 }
